@@ -9,6 +9,10 @@ metadata:
     release: {{ .Release.Name }}
 spec:
   replicas: {{ .Values.web.replicaCount }}
+  selector:
+    matchLabels:
+      app: vistio-web
+      release: {{ .Release.Name }}
   template:
     metadata:
       labels:
