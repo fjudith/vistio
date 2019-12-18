@@ -9,6 +9,10 @@ metadata:
     release: {{ .Release.Name }}
 spec:
   replicas: {{ .Values.api.replicaCount }}
+  selector:
+    matchLabels:
+      app: vistio-api
+      release: {{ .Release.Name }}
   serviceName: vistio
   template:
     metadata:
